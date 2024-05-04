@@ -12,19 +12,21 @@ END SELETOR;
 
 ARCHITECTURE LOGIC OF SELETOR IS
 BEGIN 
-   -- PROCESS(W, X, Y)
-   -- BEGIN 
-        --CASE W IS 
-         --   WHEN "000" =>
-        --        S <= E(X, Y);
-         --   WHEN "001" =>
-         --       S <= OU(X, Y);
-         --   WHEN "010" =>
-          --      S <= NAO(Y);
-         --   WHEN "011" =>
-         --       S <= ADD_SUB('0', X, Y); -- '0' para soma e '1' para subtração
-         --   WHEN OTHERS =>
-            --    NULL;
-      --  END CASE;
-  --  END PROCESS;
+    PROCESS(W, X, Y)
+    BEGIN 
+        CASE W IS 
+            WHEN "000" =>
+                S <= E(X, Y );
+            WHEN "001" =>
+                S <= OU(X, Y);
+            WHEN "010" =>
+                S <= NAO(Y);
+            WHEN "011" =>
+                S <= ADD_SUB('0', X, Y); -- '0' para soma e '1' para subtração
+				 WHEN "101" =>
+                S <= COMPARA(X,Y); -- compara se é igual, maior ou menor 
+            WHEN OTHERS =>
+                NULL;
+        END CASE;
+    END PROCESS;
 END LOGIC;
