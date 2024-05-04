@@ -20,9 +20,9 @@ SIGNAL VERIFICA : STD_LOGIC_VECTOR(7 DOWNTO 0);
        IF VERIFICA = "00000000" THEN
            S <= "00000001";
 			ELSIF VERIFICA(7) = '1' THEN
-				 S <= "00000010";
+				 S <= "00000011";
 					ELSE
-					  S <= "00000100"; 
+					  S <= "00000010"; 
 			 END IF;
     END PROCESS;
 END LOGICA;
